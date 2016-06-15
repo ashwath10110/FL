@@ -7,11 +7,16 @@
  * # MainCtrl
  * Controller of the clientApp
  */
-angular.module('clientApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+myApp.controller('MainCtrl', function($scope, $state) {
+
+  $scope.tab = 0;
+
+  $scope.setTab = function(tabId) {
+    $scope.tab = tabId;
+  };
+
+  $scope.isSet = function(tabId) {
+    return $scope.tab === tabId;
+  };
+
+});
